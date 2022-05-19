@@ -18,7 +18,7 @@
     <i class="bi bi-filter-left px-2 bg-gray-900 rounded-md"></i>
   </span>
   <div class="sidebar fixed top-0 bottom-0 lg:left-0 left-[-300px] duration-1000
-    p-2 w-[100px] overflow-y-auto text-center bg-gray-900 shadow h-screen">
+    p-2 w-[85px] overflow-y-auto text-center bg-gray-900 shadow h-screen">
       <div class="text-gray-100 text-xl">
           <div class="p-2.5 mt-1 flex items-center rounded-md ">
               <i class="bi bi-x ml-20 cursor-pointer lg:hidden" onclick="Openbar()"></i>
