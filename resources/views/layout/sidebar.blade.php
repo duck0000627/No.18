@@ -1,10 +1,13 @@
-<div style="margin-left:90px;margin-right: 700px">
-    <input class=" form-control me-2" type="search" placeholder="搜尋案件編號、員工姓名....." aria-label="Search" style="width: 240px">
+<div class="col col-3" style="margin-left:90px">
+    <input class=" form-control me-2" type="search" placeholder="搜尋案件編號、員工姓名....." aria-label="Search"
+           style="width: 240px">
     <hr style="width: 250px ; border:1px solid">
-    <div class="row" style="width: 250px">
-        <div class="col fw-bold fs-3" style="text-align: center">案件</div>
-        <div class="col" style="text-align: right">
-            <button type="button" class="btn btn-link fs-3">+</button>
+    <div class="container">
+        <div class="row" style="width: 250px">
+            <div class="col fw-bold fs-3">案件</div>
+            <div class="col" >
+                <button type="button" class="btn btn-light fs-3">+</button>
+            </div>
         </div>
     </div>
     <hr style="width: 250px ; border:1px solid">
