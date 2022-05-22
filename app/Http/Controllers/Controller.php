@@ -18,4 +18,9 @@ class Controller extends BaseController
     {
         return view('pages.main');
     }
+
+    public function process()
+    {
+        return view('pages.process');
+    }
 }

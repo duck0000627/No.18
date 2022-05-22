@@ -26,9 +26,14 @@
 </head>
 <body>
 @include('layout.navbar')
-@include('layout.sidebar')
-<div style="margin-left: 340px">
-    @yield('content')
+<div class="container">
+    <div class="row">
+        @include('layout.sidebar')
+        <div class="col">
+            @yield('main')
+            @yield('process')
+        </div>
+    </div>
 </div>
 </body>
 </html>
