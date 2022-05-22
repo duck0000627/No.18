@@ -49,10 +49,6 @@
             <div class="d-grid gap-2 col-6 mx-auto">
                 <button type="button" class="btn btn-outline-info" style="width:600px" onclick="login()">登入</button>
             </div>
-            <div class="row justify-content-center">
-                <a class="col offset-md-4" href="#">註冊</a>
-                <a class="col" href="#">忘記密碼</a>
-            </div>
         </div>
     </form>
 </main>
