@@ -32,6 +32,7 @@
         <div class="col">
             @yield('main')
             @yield('process')
+            @yield('add')
         </div>
     </div>
 </div>
