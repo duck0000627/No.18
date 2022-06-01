@@ -1,4 +1,4 @@
-<div class="col col-3" style="margin-left:90px">
+<div class="col col-3">
     <input class=" form-control me-2" type="search" placeholder="搜尋案件編號、員工姓名....." aria-label="Search"
            style="width: 240px">
     <hr style="width: 250px ; border:1px solid">
@@ -22,25 +22,10 @@
             <tr>
                 <td class="col">{{$row->number}}</td>
                 <td class="col">
-                    <button class="btn btn-light" onclick="process()">查看</button>
+                    <button class="btn btn-light" onclick="process({{$row->number}})">查看</button>
                 </td>
             </tr>
         @endforeach
-        </tbody>
-    </table>
-    <table class="table" style="width: 240px">
-        <thead>
-        <tr>
-            <th scope="col">員工姓名B</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <th scope="row">B001</th>
-        </tr>
-        <tr>
-            <th scope="row">B002</th>
-        </tr>
         </tbody>
     </table>
 </div>
@@ -49,8 +34,7 @@
         window.location.href = "{{route('add')}}";
     }
 
-    function process() {
-        console.log("1")
-        window.location.herf = "{{route('process')}}";
+    function process(number) {
+        window.location = "{{route('process')}}?number="+number;
     }
 </script>
