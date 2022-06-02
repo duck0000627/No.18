@@ -63,9 +63,21 @@
             $("#list").toggleClass("active");
             $("#List_text").show();
             $("#List_add").show();
+            $("#List_add_back").hide();
             $("#Bulletin_text").hide();
             $("#Bulletin_add").hide();
             $("#Notify_text").hide();
+            $("#List_title").hide();
+            $("#List_work").hide();
+            $("#List_data").hide();
+            $("#List_cancle").hide();
+            $("#List_yes").hide();
+            $("#Bulletin_add_back").hide();
+            $("#Bulletin_title").hide();
+            $("#Bulletin_work").hide();
+            $("#Bulletin_data").hide();
+            $("#Bulletin_cancle").hide();
+            $("#Bulletin_yes").hide();
         });
 
         $("#Bulletin").on("click", function () {
@@ -75,7 +87,19 @@
             $("#Bulletin_add").show();
             $("#List_text").hide();
             $("#List_add").hide();
+            $("#List_add_back").hide();
             $("#Notify_text").hide();
+            $("#List_title").hide();
+            $("#List_work").hide();
+            $("#List_data").hide();
+            $("#List_cancle").hide();
+            $("#List_yes").hide();
+            $("#Bulletin_add_back").hide();
+            $("#Bulletin_title").hide();
+            $("#Bulletin_work").hide();
+            $("#Bulletin_data").hide();
+            $("#Bulletin_cancle").hide();
+            $("#Bulletin_yes").hide();
         });
 
         $("#Notify").on("click", function () {
@@ -85,7 +109,19 @@
             $("#Bulletin_add").hide();
             $("#List_text").hide();
             $("#List_add").hide();
+            $("#List_add_back").hide();
             $("#Notify_text").show();
+            $("#List_title").hide();
+            $("#List_work").hide();
+            $("#List_data").hide();
+            $("#List_cancle").hide();
+            $("#List_yes").hide();
+            $("#Bulletin_add_back").hide();
+            $("#Bulletin_title").hide();
+            $("#Bulletin_work").hide();
+            $("#Bulletin_data").hide();
+            $("#Bulletin_cancle").hide();
+            $("#Bulletin_yes").hide();
         });
     });
 
