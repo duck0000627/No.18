@@ -1,12 +1,24 @@
 <nav id="sidebar">
         <!-- List 列表 -->
-    <ul class="list-unstyled">
+    <ul class="list-unstyled" style="padding: 10px;
+    font-size: 30px;
+    display: block;
+    text-decoration: none;
+    color: white">
 
-        <li>
-            <a href="#sublist" data-bs-toggle="collapse" id="dropdown"><i class="bi bi-gear"></i></a>
+        <li style="padding: 10px;
+    font-size: 30px;
+    display: block;
+    text-decoration: none;
+    color: white;">
+            <a href="#sublist" data-bs-toggle="collapse" id="dropdown" style="padding: 10px;
+    font-size: 30px;
+    display: block;
+    text-decoration: none;
+    color: white;"><i class="bi bi-gear"></i></a>
 
             <!-- 子連結列表  -->
-            <ul id="sublist" class="list-unstyled collapse">
+            <ul id="sublist" class="list-unstyled collapse" >
                 <li>
                     <a href="#">字型大小</a>
                 </li>
@@ -16,13 +28,25 @@
             </ul>
         </li>
         <li>
-            <a id="List"><i class="bi bi-list-check"></i> </a>
+            <a id="List" style="padding: 10px;
+    font-size: 30px;
+    display: block;
+    text-decoration: none;
+    color: white;"><i class="bi bi-list-check"></i> </a>
         </li>
         <li>
-            <a id="Bulletin"><i class="bi bi-file-earmark-text"></i>  </a>
+            <a id="Bulletin" style="padding: 10px;
+    font-size: 30px;
+    display: block;
+    text-decoration: none;
+    color: white"><i class="bi bi-file-earmark-text"></i>  </a>
         </li>
         <li>
-            <a id="Notify"><i class="bi bi-bell"></i></a>
+            <a id="Notify" style="padding: 10px;
+    font-size: 30px;
+    display: block;
+    text-decoration: none;
+    color: white"><i class="bi bi-bell"></i></a>
         </li>
 
     </ul>
@@ -64,10 +88,6 @@
             $("#Notify_text").show();
         });
     });
-
-
-
-
 
     function logout() {
         window.location.href = "{{route('login')}}";
