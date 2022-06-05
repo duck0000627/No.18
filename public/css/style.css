@@ -39,12 +39,11 @@
     font-size: 30px;
     display: block;
     text-decoration: none;
-    color: white;
 }
 
 #sidebar ul li a:hover {
-    color: indigo;
-    background: #fff;
+    color: gray;
+
 }
 
 
