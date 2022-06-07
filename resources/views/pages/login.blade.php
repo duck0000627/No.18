@@ -25,18 +25,26 @@
     <form>
         <div class="container" style="position:absolute ; top:40% ; left:13%">
             <div class="row justify-content-center">
+                <div class="col col-2">
+                    <label class="h2">帳號:</label>
+                </div>
+                <div class="col col-4">
+                    <input type="text" class="form-control" id="account">
+                </div>
+            </div>
+            <div class="row invisible">  //隱藏ㄉ排版用
                 <div class="col.auto">
-                    <label class="col-form-label">帳號:</label>
+                    <label class="h2">帳號:</label>
                 </div>
                 <div class="col.auto">
                     <input type="text" class="form-control" id="account">
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col.auto">
-                    <label class="col-form-label">密碼:</label>
+                <div class="col col-2">
+                    <label class="h2">密碼:</label>
                 </div>
-                <div class="col.auto">
+                <div class="col col-4">
                     <input type="text" class="form-control" id="password">
                 </div>
             </div>

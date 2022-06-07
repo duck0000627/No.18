@@ -117,8 +117,6 @@
             console.log($(this).hasClass("btn-success"))
         })
 
-{{--        {{$process -> step1 == true?"btn-outline-success":"btn-outline-secondary"}}--}}
-
 
     </script>
 @endsection
