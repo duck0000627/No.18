@@ -6,57 +6,57 @@
                 <button type="button" class="btn {{$process -> step1 == true?"btn-success":"btn-secondary"}} col-12 btn-change-color" id="1"
                         ondblclick="changecolor()">1.完備各項基本資料
                 </button>
-                <img src="{{asset('picture/down.png')}}" style="height: 50px">
+                <img src="{{asset('picture/down.png')}}" style="height: 50px;position: relative;left: 150px">
             </div>
             <div class="col">
                 <button type="button" class="btn {{$process -> step10 == true?"btn-success":"btn-secondary"}} col-12 btn-change-color" id="10">
                     10.開立請款單給客戶&歸還客戶印章與核准公文
                 </button>
-                <img src="{{asset('picture/up.png')}}" style="height: 50px">
+                <img src="{{asset('picture/up.png')}}" style="height: 50px;position: relative;left: 150px">
             </div>
             <div class="col">
                 <button type="button" class="btn {{$process -> step11 == true?"btn-success":"btn-secondary"}} col-12 btn-change-color" id="11">11.確認是否已收到工商費用
                 </button>
-                <img src="{{asset('picture/down.png')}}" style="height: 50px">
+                <img src="{{asset('picture/down.png')}}" style="height: 50px;position: relative;left: 150px">
             </div>
             <div class="col">
                 <button type="button" class="btn {{$process -> step2 == true?"btn-success":"btn-secondary"}} col-12 btn-change-color" id="2">2.確認客戶資料是否完備，缺件需要通知
                 </button>
-                <img src="{{asset('picture/down.png')}}" style="height: 50px">
+                <img src="{{asset('picture/down.png')}}" style="height: 50px;position: relative;left: 150px">
             </div>
             <div class="col">
                 <button type="button" class="btn {{$process -> step9 == true?"btn-success":"btn-secondary"}} col-12 btn-change-color" id="9">9.收到核准公文</button>
-                <img src="{{asset('picture/up.png')}}" style="height: 50px">
+                <img src="{{asset('picture/up.png')}}" style="height: 50px;position: relative;left: 150px">
             </div>
             <div class="col">
                 <button type="button" class="btn {{$process -> step12 == true?"btn-success":"btn-secondary"}} col-12 btn-change-color" id="12">12.與老闆確認是否可以結案
                 </button>
-                <img src="{{asset('picture/down.png')}}" style="height: 50px">
+                <img src="{{asset('picture/down.png')}}" style="height: 50px;position: relative;left: 150px">
             </div>
             <div class="col">
                 <button type="button" class="btn {{$process -> step3 == true?"btn-success":"btn-secondary"}} col-12 btn-change-color" id="3">
                     3.主管派案，承辦同仁確認客戶聯絡資訊案件種類及主管承辦機關
                 </button>
-                <img src="{{asset('picture/down.png')}}" style="height: 50px">
+                <img src="{{asset('picture/down.png')}}" style="height: 50px;position: relative;left: 150px">
             </div>
             <div class="col">
                 <button type="button" class="btn {{$process -> step8 == true?"btn-success":"btn-secondary"}} col-12 btn-change-color" id="8">8.待主管機關與國稅局核准變更登記
                 </button>
-                <img src="{{asset('picture/up.png')}}" style="height: 50px">
+                <img src="{{asset('picture/up.png')}}" style="height: 50px;position: relative;left: 150px">
             </div>
             <div class="col">
                 <button type="button" class="btn {{$process -> step13 == true?"btn-success":"btn-secondary"}} col-12 btn-change-color" id="13">13.清點資料、移轉給帳務組同仁
                 </button>
-                <img src="{{asset('picture/down.png')}}" style="height: 50px">
+                <img src="{{asset('picture/down.png')}}" style="height: 50px;position: relative;left: 150px">
             </div>
             <div class="col">
                 <button type="button" class="btn {{$process -> step4 == true?"btn-success":"btn-secondary"}} col-12 btn-change-color" id="4">4.登打奇勝與選戰系統基本資料
                 </button>
-                <img src="{{asset('picture/down.png')}}" style="height: 50px">
+                <img src="{{asset('picture/down.png')}}" style="height: 50px;position: relative;left: 150px">
             </div>
             <div class="col">
                 <button type="button" class="btn {{$process -> step7 == true?"btn-success":"btn-secondary"}} col-12 btn-change-color" id="7">7.送件</button>
-                <img src="{{asset('picture/up.png')}}" style="height: 50px">
+                <img src="{{asset('picture/up.png')}}" style="height: 50px;position: relative;left: 150px">
             </div>
             <div class="col">
                 <button type="button" class="btn {{$process -> step14 == true?"btn-success":"btn-secondary"}} col-12 btn-change-color" id="14">
