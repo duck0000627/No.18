@@ -19,18 +19,24 @@ class Controller extends BaseController
     public function main()
     {
         $data = DB::table('employee_a_s')->get();
-        return view('pages.main',compact('data',$data));
+        $lists = DB::table('todolists')->get();
+        $bulletins = DB::table('bulletins')->get();
+        return view('pages.main',compact('data',$data,'lists',$lists,'bulletins',$bulletins));
     }
 
     public function process(Request $request)
     {
         $number = $request->number;
         $data = DB::table('employee_a_s')->get();
+        $lists = DB::table('todolists')->get();
+        $bulletins = DB::table('bulletins')->get();
         $process = DB::table('processes')->where('number','=',$number)->first();
         $result = [
             'number' => $number,
             'data' => $data,
-            'process' => $process
+            'process' => $process,
+            'lists' => $lists,
+            'bulletins' => $bulletins
         ];
         return view('pages.process',$result);
     }
@@ -67,7 +73,9 @@ class Controller extends BaseController
     public function add()
     {
         $data = DB::table('employee_a_s')->get();
-        return view('pages.add',compact('data',$data));
+        $lists = DB::table('todolists')->get();
+        $bulletins = DB::table('bulletins')->get();
+        return view('pages.add',compact('data',$data,'lists',$lists,'bulletins',$bulletins));
     }
 
     public function get_add_data(Request $request)
@@ -94,18 +102,40 @@ class Controller extends BaseController
         return redirect() -> route('main');  //回到主畫面
     }
 
-    public function search()
+//    public function search()
+//    {
+//        $data = DB::table('employee_a_s')->get();
+//        return view('pages.search',compact('data',$data));
+//    }
+
+//    public function search_data(Request $request)
+//    {
+//        $number = $request -> get('number');
+//        $data = DB::table('employee_a_s')
+//            ->where('id',$id)
+//            ->first();
+//        return view('pages.search',compact('data',$data));
+//    }
+
+    public function list_add(Request $request)
     {
-        $data = DB::table('employee_a_s')->get();
-        return view('pages.search',compact('data',$data));
+        $title = $request -> get('List_title');
+        $work = $request -> get('List_work');
+        DB::table('todolists') -> insert([
+            'title' => $title,
+            'work' => $work
+        ]);
+        return redirect() -> route('main');  //回到主畫面
     }
 
-    public function search_data(Request $request)
+    public function bulletins_add(Request $request)
     {
-        $number = $request -> get('number');
-        $data = DB::table('employee_a_s')
-            ->where('id',$id)
-            ->first();
-        return view('pages.search',compact('data',$data));
+        $title = $request -> get('Bulletin_title');  //抓值
+        $work = $request -> get('Bulletin_work');
+        DB::table('bulletins') -> insert([
+            'title' => $title,
+            'work' => $work
+        ]);
+        return redirect() -> route('main');  //回到主畫面
     }
 }

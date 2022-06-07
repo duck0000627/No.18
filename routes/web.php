@@ -22,5 +22,10 @@ Route::get('/process_data',[\App\Http\Controllers\Controller::class,'process_dat
 Route::get('/add',[\App\Http\Controllers\Controller::class,'add']) -> name('add');
 Route::post('/add',[\App\Http\Controllers\Controller::class,'get_add_data']) -> name('get_add_data');
 
-Route::get('/search',[\App\Http\Controllers\Controller::class,'search']) -> name('search');
+//Route::get('/search',[\App\Http\Controllers\Controller::class,'search']) -> name('search');
 //Route::get('/search',[\App\Http\Controllers\Controller::class,'search_data']) -> name('search_data');
+
+Route::get('/list_add',[\App\Http\Controllers\Controller::class,'list_add']) -> name('list_add');
+
+Route::get('/bulletins_add',[\App\Http\Controllers\Controller::class,'bulletins_add']) -> name('bulletins_add');
+

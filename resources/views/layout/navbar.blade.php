@@ -38,9 +38,11 @@
             $("#list").toggleClass("active");
             $("#List_text").show();
             $("#List_add").show();
+            $("#List_list").show();
             $("#List_add_back").hide();
             $("#Bulletin_text").hide();
             $("#Bulletin_add").hide();
+            $("#Bulletin_list").hide();
             $("#Notify_text").hide();
             $("#List_title").hide();
             $("#List_work").hide();
@@ -60,6 +62,8 @@
             $("#list").toggleClass("active");
             $("#Bulletin_text").show();
             $("#Bulletin_add").show();
+            $("#Bulletin_list").show();
+            $("#List_list").hide();
             $("#List_text").hide();
             $("#List_add").hide();
             $("#List_add_back").hide();
@@ -87,11 +91,13 @@
             $("#List_add_back").hide();
             $("#Notify_text").show();
             $("#List_title").hide();
+            $("#List_list").hide();
             $("#List_work").hide();
             $("#List_data").hide();
             $("#List_cancle").hide();
             $("#List_yes").hide();
             $("#Bulletin_add_back").hide();
+            $("#Bulletin_list").hide();
             $("#Bulletin_title").hide();
             $("#Bulletin_work").hide();
             $("#Bulletin_data").hide();
