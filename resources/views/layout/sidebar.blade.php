@@ -1,6 +1,5 @@
 <div class="col col-3">
-    <input class=" form-control me-2" type="search" placeholder="搜尋案件編號、員工姓名....." aria-label="Search"
-           style="width: 240px">
+    <button class=" form-control me-2" style="width: 240px" onclick="search()">搜尋案件編號、員工姓名.....</button>
     <hr style="width: 250px ; border:1px solid">
     <div class="container">
         <div class="row" style="width: 250px">
@@ -36,5 +35,9 @@
 
     function process(number) {
         window.location = "{{route('process')}}?number="+number;
+    }
+
+    function search(number) {
+        window.location = "{{route('search')}}?number="+number;
     }
 </script>

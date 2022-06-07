@@ -43,13 +43,13 @@
 }
 
 #sidebar ul li a:hover {
-    color: indigo;
+    color: black;
     background: #fff;
 }
 
 
 ul ul li a {
-    background-color: rgb(203, 142, 247);
+    background-color: white;
     font-size: 10px;
     font-style: italic;
 }

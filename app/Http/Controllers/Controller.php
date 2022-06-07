@@ -93,4 +93,19 @@ class Controller extends BaseController
         ]);
         return redirect() -> route('main');  //回到主畫面
     }
+
+    public function search()
+    {
+        $data = DB::table('employee_a_s')->get();
+        return view('pages.search',compact('data',$data));
+    }
+
+    public function search_data(Request $request)
+    {
+        $number = $request -> get('number');
+        $data = DB::table('employee_a_s')
+            ->where('id',$id)
+            ->first();
+        return view('pages.search',compact('data',$data));
+    }
 }

@@ -24,7 +24,6 @@
         <li>
             <a id="Notify"><i class="bi bi-bell"></i></a>
         </li>
-
     </ul>
 
 </nav>

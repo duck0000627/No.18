@@ -34,6 +34,7 @@
                 @yield('main')
                 @yield('process')
                 @yield('add')
+                @yield('search')
             </div>
         </div>
     </div>
