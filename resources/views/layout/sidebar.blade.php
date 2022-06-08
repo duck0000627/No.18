@@ -37,7 +37,7 @@
         window.location = "{{route('process')}}?number="+number;
     }
 
-    {{--function search(number) {--}}
-    {{--    window.location = "{{route('search')}}?number="+number;--}}
-    {{--}--}}
+    function search(number) {
+        window.location = "{{route('search')}}";
+    }
 </script>

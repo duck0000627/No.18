@@ -1,35 +1,56 @@
 @extends("layout.master")
 @section("search")
     <div class="container" style="position: relative;top: 20%">
-            <div class="row">
-                <div class="col">
-                    <input type="text" class="form-control" placeholder="輸入關鍵字，搜尋案件編號、員工姓名" id="number">
-                </div>
-                <div class="col">
-                    <button type="submit" class="btn btn-secondary" name="search" onclick="search_data()">搜尋</button>
-                </div>
-            </div>
-    </div>
-    <div class="container" style="position: relative;top: 25%">
         <div class="row">
             <div class="col">
-                <label id="name" class="fs-3">案件編號</label>
+                <input type="text" class="form-control" placeholder="輸入關鍵字，搜尋案件編號" id="number" name="number">
             </div>
-        </div>
-        <div class="row">
             <div class="col">
-                <label id="company" class="fs-3" style="position: relative;top: 20%">公司名稱</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <label id="type" class="fs-3" style="position: relative;top: 40%">種類</label>
+                <button type="submit" class="btn btn-secondary" name="search" id="search">搜尋</button>
             </div>
         </div>
     </div>
-<script>
-    {{--function search_data() {--}}
-    {{--    window.location.href = "{{route('search_data')}}"+"?number="+number;--}}
-    {{--}--}}
-</script>
+    <table class="table" style="position: relative;top: 25%">
+        <thead>
+        <tr>
+            <th scope="col">案件編號</th>
+            <th scope="col">公司名稱</th>
+            <th scope="col">種類</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+    <script>
+        $("#search").click(function () {
+            let tbody = $("#tbody")
+            let number = $("#number").val()
+            $.ajax({
+                url: "{{route('search_data')}}",
+                method: 'get',
+                data: {
+                    number: number,
+                }, success: function (res) {
+                    tbody.children().remove();
+                    $.each(res, function (index, value) {
+                        console.log(value)
+                        let row = `
+                        <tr>
+                            <td>${value["number"]}</td>
+                            <td>${value["name"]}</td>
+                            <td>${value["type"]}</td>
+                        </tr>
+                        `;
+                        tbody.append(row);
+                    })
+                }, error: function (res) {
+                    console.log(res)
+                }
+            })
+            console.log(number)
+        })
+
+
+    </script>
 @endsection

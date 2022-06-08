@@ -102,20 +102,22 @@ class Controller extends BaseController
         return redirect() -> route('main');  //回到主畫面
     }
 
-//    public function search()
-//    {
-//        $data = DB::table('employee_a_s')->get();
-//        return view('pages.search',compact('data',$data));
-//    }
+    public function search()
+    {
+        $data = DB::table('employee_a_s')->get();
+        $lists = DB::table('todolists')->get();
+        $bulletins = DB::table('bulletins')->get();
+        return view('pages.search',compact('data',$data,'lists',$lists,'bulletins',$bulletins));
+    }
 
-//    public function search_data(Request $request)
-//    {
-//        $number = $request -> get('number');
-//        $data = DB::table('employee_a_s')
-//            ->where('id',$id)
-//            ->first();
-//        return view('pages.search',compact('data',$data));
-//    }
+    public function search_data(Request $request)
+    {
+        $number = $request -> get('number');
+        $data = DB::table('employee_a_s')
+            ->where('number',"like","%".$number."%")
+            ->get();
+        return $data;
+    }
 
     public function list_add(Request $request)
     {

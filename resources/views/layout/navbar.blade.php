@@ -24,6 +24,9 @@
         <li>
             <a id="Notify"><i class="bi bi-bell"></i></a>
         </li>
+        <li>
+            <a id="IDcard"><i class="bi bi-person-badge"></i></a>
+        </li>
 
     </ul>
 
@@ -56,6 +59,8 @@
             $("#Bulletin_data").hide();
             $("#Bulletin_cancle").hide();
             $("#Bulletin_yes").hide();
+            $("#ID_text").hide();
+            $("#ID_mail").hide();
         });
 
         $("#Bulletin").on("click", function () {
@@ -80,6 +85,8 @@
             $("#Bulletin_data").hide();
             $("#Bulletin_cancle").hide();
             $("#Bulletin_yes").hide();
+            $("#ID_text").hide();
+            $("#ID_mail").hide();
         });
 
         $("#Notify").on("click", function () {
@@ -104,6 +111,34 @@
             $("#Bulletin_data").hide();
             $("#Bulletin_cancle").hide();
             $("#Bulletin_yes").hide();
+            $("#ID_text").hide();
+            $("#ID_mail").hide();
+        });
+
+        $("#IDcard").on("click", function() {
+
+            $("#list").toggleClass("active");
+            $("#List_text").hide();
+            $("#List_add").hide();
+            $("#List_list").hide();
+            $("#List_add_back").hide();
+            $("#Bulletin_text").hide();
+            $("#Bulletin_add").hide();
+            $("#Bulletin_list").hide();
+            $("#Notify_text").hide();
+            $("#List_title").hide();
+            $("#List_work").hide();
+            $("#List_data").hide();
+            $("#List_cancle").hide();
+            $("#List_yes").hide();
+            $("#Bulletin_add_back").hide();
+            $("#Bulletin_title").hide();
+            $("#Bulletin_work").hide();
+            $("#Bulletin_data").hide();
+            $("#Bulletin_cancle").hide();
+            $("#Bulletin_yes").hide();
+            $("#ID_text").show();
+            $("#ID_mail").show();
         });
     });
 
