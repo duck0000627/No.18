@@ -1,5 +1,21 @@
 @extends('layout.master')
 @section('process')
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">案件編號</th>
+            <th scope="col">公司姓名</th>
+            <th scope="col">種類</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="col">{{$getid -> number}}</td>
+                <td class="col">{{$getid -> name}}</td>
+                <td class="col">{{$getid -> type}}</td>
+            </tr>
+        </tbody>
+    </table>
     <div class="container" style="margin-top: 100px">
         <div class="row row-cols-3">
             <div class="col">

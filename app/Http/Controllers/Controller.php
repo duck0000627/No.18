@@ -31,13 +31,16 @@ class Controller extends BaseController
         $lists = DB::table('todolists')->get();
         $bulletins = DB::table('bulletins')->get();
         $process = DB::table('processes')->where('number','=',$number)->first();
+        $getid = DB::table('employee_a_s')->where('number',$number)->first();
         $result = [
             'number' => $number,
             'data' => $data,
             'process' => $process,
             'lists' => $lists,
-            'bulletins' => $bulletins
+            'bulletins' => $bulletins,
+            'getid' => $getid
         ];
+//        dd($getid);
         return view('pages.process',$result);
     }
 
