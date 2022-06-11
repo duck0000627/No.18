@@ -8,6 +8,7 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class Controller extends BaseController
 {
@@ -21,7 +22,8 @@ class Controller extends BaseController
         $data = DB::table('employee_a_s')->get();
         $lists = DB::table('todolists')->get();
         $bulletins = DB::table('bulletins')->get();
-        return view('pages.main',compact('data',$data,'lists',$lists,'bulletins',$bulletins));
+        $process_data = DB::table('processes')->get();
+        return view('pages.main',compact('data',$data,'lists',$lists,'bulletins',$bulletins,'process_data',$process_data));
     }
 
     public function process(Request $request)
@@ -31,16 +33,25 @@ class Controller extends BaseController
         $lists = DB::table('todolists')->get();
         $bulletins = DB::table('bulletins')->get();
         $process = DB::table('processes')->where('number','=',$number)->first();
+        $process_data = DB::table('processes')->get();
         $getid = DB::table('employee_a_s')->where('number',$number)->first();
+//        $process_notify = DB::table('processes')->where('step1','=',1)->get();
+//        $step1 = $process ->where('step1');
+//        if ($process(step1) = true){
+//            $id = "步驟一"
+//        }else{
+//            $id = "步驟一"
+//        }
         $result = [
             'number' => $number,
             'data' => $data,
             'process' => $process,
             'lists' => $lists,
             'bulletins' => $bulletins,
-            'getid' => $getid
+            'getid' => $getid,
+            'process_data' => $process_data
         ];
-//        dd($getid);
+//        dd($process);
         return view('pages.process',$result);
     }
 
@@ -78,7 +89,8 @@ class Controller extends BaseController
         $data = DB::table('employee_a_s')->get();
         $lists = DB::table('todolists')->get();
         $bulletins = DB::table('bulletins')->get();
-        return view('pages.add',compact('data',$data,'lists',$lists,'bulletins',$bulletins));
+        $process_data = DB::table('processes')->get();
+        return view('pages.add',compact('data',$data,'lists',$lists,'bulletins',$bulletins,'process_data',$process_data));
     }
 
     public function get_add_data(Request $request)
@@ -88,15 +100,17 @@ class Controller extends BaseController
         $type = $request -> get('type');
         $employee = $request -> get('employee');
         $phone = $request -> get('phone');
+        $process_data = $request -> get('process');
         $email = $request -> get('email');
-
+//        dd($type);
         DB::table('employee_a_s') -> insert([   //存到資料庫中
         'number' =>$number,
         'name' => $name,
         'type' => $type,
         'employee' => $employee,
         'phone' => $phone,
-        'email' => $email
+        'email' => $email,
+            'process_data' => $process_data
         ]);
         DB::table('processes')->insert([
             'number' => $number,
@@ -110,7 +124,8 @@ class Controller extends BaseController
         $data = DB::table('employee_a_s')->get();
         $lists = DB::table('todolists')->get();
         $bulletins = DB::table('bulletins')->get();
-        return view('pages.search',compact('data',$data,'lists',$lists,'bulletins',$bulletins));
+        $process_data = DB::table('processes')->get();
+        return view('pages.search',compact('data',$data,'lists',$lists,'bulletins',$bulletins,'process_data',$process_data));
     }
 
     public function search_data(Request $request)
@@ -142,5 +157,15 @@ class Controller extends BaseController
             'work' => $work
         ]);
         return redirect() -> route('main');  //回到主畫面
+    }
+
+    public function uploadpage()
+    {
+        return view('pages.fileupload');
+    }
+    public function upload(Request $request)
+    {
+        Storage::put('test.jpg', $request->file('ImageFile')->get());
+        return view('pages.fileupload')->withMessage('Success Upload');
     }
 }

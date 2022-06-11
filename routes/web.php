@@ -29,3 +29,6 @@ Route::get('/list_add',[\App\Http\Controllers\Controller::class,'list_add']) -> 
 
 Route::get('/bulletins_add',[\App\Http\Controllers\Controller::class,'bulletins_add']) -> name('bulletins_add');
 
+Route::get('upload',[\App\Http\Controllers\Controller::class,'uploadpage']);
+Route::post('upload',[\App\Http\Controllers\Controller::class,'upload']);
+

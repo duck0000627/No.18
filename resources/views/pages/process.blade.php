@@ -122,7 +122,6 @@
                     step13:$("#13").hasClass("btn-success"),
                     step14:$("#14").hasClass("btn-success"),
                 }, success: function (res) {
-
                     console.log(res)
                 }, error: function (res) {
                     console.log(res)

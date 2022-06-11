@@ -61,6 +61,7 @@
             $("#Bulletin_yes").hide();
             $("#ID_text").hide();
             $("#ID_mail").hide();
+            $("#Notify_list").hide();
         });
 
         $("#Bulletin").on("click", function () {
@@ -87,11 +88,13 @@
             $("#Bulletin_yes").hide();
             $("#ID_text").hide();
             $("#ID_mail").hide();
+            $("#Notify_list").hide();
         });
 
         $("#Notify").on("click", function () {
 
             $("#list").toggleClass("active");
+            $("#Notify_list").show();
             $("#Bulletin_text").hide();
             $("#Bulletin_add").hide();
             $("#List_text").hide();
@@ -137,6 +140,7 @@
             $("#Bulletin_data").hide();
             $("#Bulletin_cancle").hide();
             $("#Bulletin_yes").hide();
+            $("#Notify_list").hide();
             $("#ID_text").show();
             $("#ID_mail").show();
         });

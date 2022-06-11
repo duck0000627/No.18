@@ -31,7 +31,13 @@
         <button id="Bulletin_cancle">取消</button>
         <button id="Bulletin_yes" type="submit">儲存</button>
     </form>
-    <table class="table table-sm" style="width: 240px" id="List_list">
+    <table class="table table-sm" id="List_list">
+        <thead>
+        <tr>
+            <th scope="col">標題</th>
+            <th scope="col">待辦事項</th>
+        </tr>
+        </thead>
         <tbody>
         @foreach($lists as $row)
             <tr>
@@ -41,12 +47,34 @@
         @endforeach
         </tbody>
     </table>
-    <table class="table table-bordered" style="width: 240px" id="Bulletin_list">
+    <table class="table table-sm" id="Bulletin_list">
+        <thead>
+        <tr>
+            <th scope="col">標題</th>
+            <th scope="col">公告事項</th>
+        </tr>
+        </thead>
         <tbody>
         @foreach($bulletins as $row)
             <tr>
                 <td class="col">{{$row->title}}</td>
                 <td class="col">{{$row->work}}</td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
+    <table class="table table-sm" id="Notify_list">
+        <thead>
+        <tr>
+            <th scope="col">案件編號</th>
+            <th scope="col">工作進度</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($process_data as $row)
+            <tr>
+                <td class="col">{{$row->number}}</td>
+                <td class="col">{{$row->step1}}</td>
             </tr>
         @endforeach
         </tbody>
@@ -96,7 +124,12 @@
             $("#Bulletin_cancle").hide();
             $("#Bulletin_yes").hide();
         });
+
+
     })
+
+
+
 
     function upload() {
 
