@@ -74,7 +74,7 @@
         @foreach($process_data as $row)
             <tr>
                 <td class="col">{{$row->number}}</td>
-                <td class="col">{{$row->step1}}</td>
+                <td class="col">{{$row->process}}</td>
             </tr>
         @endforeach
         </tbody>

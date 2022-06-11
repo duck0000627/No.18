@@ -9,6 +9,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Psy\Util\Str;
 
 class Controller extends BaseController
 {
@@ -35,13 +36,6 @@ class Controller extends BaseController
         $process = DB::table('processes')->where('number','=',$number)->first();
         $process_data = DB::table('processes')->get();
         $getid = DB::table('employee_a_s')->where('number',$number)->first();
-//        $process_notify = DB::table('processes')->where('step1','=',1)->get();
-//        $step1 = $process ->where('step1');
-//        if ($process(step1) = true){
-//            $id = "步驟一"
-//        }else{
-//            $id = "步驟一"
-//        }
         $result = [
             'number' => $number,
             'data' => $data,
@@ -51,7 +45,7 @@ class Controller extends BaseController
             'getid' => $getid,
             'process_data' => $process_data
         ];
-//        dd($process);
+//        dd($process_data);
         return view('pages.process',$result);
     }
 
@@ -76,6 +70,7 @@ class Controller extends BaseController
                     'step12' => $request->step12 == "true" ? true : false,
                     'step13' => $request->step13 == "true" ? true : false,
                     'step14' => $request->step14 == "true" ? true : false,
+                    'process' => $request->checkid
                 ]);
             return $request;
         }catch (\Exception $exception)
@@ -100,7 +95,6 @@ class Controller extends BaseController
         $type = $request -> get('type');
         $employee = $request -> get('employee');
         $phone = $request -> get('phone');
-        $process_data = $request -> get('process');
         $email = $request -> get('email');
 //        dd($type);
         DB::table('employee_a_s') -> insert([   //存到資料庫中
@@ -110,7 +104,6 @@ class Controller extends BaseController
         'employee' => $employee,
         'phone' => $phone,
         'email' => $email,
-            'process_data' => $process_data
         ]);
         DB::table('processes')->insert([
             'number' => $number,

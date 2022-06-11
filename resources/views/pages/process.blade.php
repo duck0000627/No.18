@@ -84,7 +84,7 @@
                 </button>
             </div>
             <div class="col">
-                <button type="button" class="btn {{$process -> step6 == true?"btn-success":"btn-secondary"}} col-12 btn-change-color" id="6">6.經主管確認後準備送件資料
+                <button type="button" class="btn {{$process -> step6 == true?"btn-success":"btn-secondary"}} col-12 btn-change-color" id="6" name="btn6">6.經主管確認後準備送件資料
                 </button>
             </div>
         </div>
@@ -99,6 +99,7 @@
             let thisbtn = $(this);
             thisbtn.toggleClass("btn-secondary");
             thisbtn.toggleClass("btn-success");
+            console.log(this.id)
         })
 
         $(".btn").dblclick(function () {
@@ -121,18 +122,16 @@
                     step12:$("#12").hasClass("btn-success"),
                     step13:$("#13").hasClass("btn-success"),
                     step14:$("#14").hasClass("btn-success"),
+                    checkid:this.id
                 }, success: function (res) {
                     console.log(res)
                 }, error: function (res) {
                     console.log(res)
                 }
-
             })
             $(this).hasClass("btn-success");
             console.log($(this).hasClass("btn-success"))
         })
-
-
     </script>
 @endsection
 

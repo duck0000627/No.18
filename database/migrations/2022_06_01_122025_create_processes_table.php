@@ -31,6 +31,7 @@ class CreateProcessesTable extends Migration
             $table->boolean("step12")->nullable();
             $table->boolean("step13")->nullable();
             $table->boolean("step14")->nullable();
+            $table->string("process")->nullable();
         });
     }
 
