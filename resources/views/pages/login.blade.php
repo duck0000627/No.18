@@ -45,7 +45,7 @@
                     <label class="h2">密碼:</label>
                 </div>
                 <div class="col col-4">
-                    <input type="text" class="form-control" id="password">
+                    <input type="password" class="form-control" id="password">
                 </div>
             </div>
             <div class="row justify-content-center">
