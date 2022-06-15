@@ -19,16 +19,14 @@
         {{--  待辦清單  --}}
         <input type="text" class="form-control" placeholder="輸入待辦標題" id="List_title" name="List_title">
         <input type="text" class="form-control" placeholder="敘述待辦事項" id="List_work" name="List_work">
-        <button class="form-control" id="List_data" onclick="upload()">上傳檔案</button>
-        <button id="List_cancle">取消</button>
+        <button class="form-control" id="List_data" type="button">上傳檔案</button>
         <button id="List_yes" type="submit">儲存</button>
     </form>
     <form action="{{route('bulletins_add')}}" method="get">
         {{--  公告欄  --}}
         <input type="text" class="form-control" placeholder="輸入公告欄標題" id="Bulletin_title" name="Bulletin_title">
         <input type="text" class="form-control" placeholder="敘述公告欄事項" id="Bulletin_work" name="Bulletin_work">
-        <button class="form-control" id="Bulletin_data">上傳檔案</button>
-        <button id="Bulletin_cancle">取消</button>
+        <button class="form-control" id="Bulletin_data" type="button">上傳檔案</button>
         <button id="Bulletin_yes" type="submit">儲存</button>
     </form>
     <table class="table table-sm" id="List_list">
