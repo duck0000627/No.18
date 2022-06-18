@@ -15,14 +15,14 @@
     </button>
     <hr style="width: 350px ; border:1px solid">
     <i class="bi bi-envelope" id="ID_mail" style="display: none">*****@gmail.com</i>
-    <form action="{{route('list_add')}}" method="get">
+    <form action="{{route('list_add')}}" method="get" onsubmit="return check_list()" name="list">
         {{--  待辦清單  --}}
         <input type="text" class="form-control" placeholder="輸入待辦標題" id="List_title" name="List_title">
         <input type="text" class="form-control" placeholder="敘述待辦事項" id="List_work" name="List_work">
         <button id="List_data" type="button" class="btn btn-light form-control">上傳檔案</button>
         <button id="List_yes" type="submit">儲存</button>
     </form>
-    <form action="{{route('bulletins_add')}}" method="get">
+    <form action="{{route('bulletins_add')}}" method="get" onsubmit="return check_bulletins()" name="bulletins">
         {{--  公告欄  --}}
         <input type="text" class="form-control" placeholder="輸入公告欄標題" id="Bulletin_title" name="Bulletin_title">
         <input type="text" class="form-control" placeholder="敘述公告欄事項" id="Bulletin_work" name="Bulletin_work">
@@ -126,10 +126,26 @@
 
     })
 
-
-
-
-    function upload() {
-
+    function check_list() {
+        if (document.list.List_title.value=='' || document.list.List_work.value=='') {
+            Swal.fire(
+                '資料未填寫完',
+                '',
+                'warning'
+            );
+            return false;
+        }
+        return true;
+    }
+    function check_bulletins() {
+        if (document.bulletins.Bulletin_title.value=='' || document.bulletins.Bulletin_work.value=='') {
+            Swal.fire(
+                '資料未填寫完',
+                '',
+                'warning'
+            );
+            return false;
+        }
+        return true;
     }
 </script>
